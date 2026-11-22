@@ -105,7 +105,7 @@ table(["ID", "Requirement", "Implemented in", "Verified by", "Status"], [
     ["FR4", "Store run metadata and results", "storage.py (SQLite)", "TC07", "Done"],
     ["FR5", "Compare at least two runs / versions", "compare.compare", "TC09, TC10", "Done"],
     ["FR6", "Show metrics, status, comparisons in a dashboard/report", "dashboard/app.py, cli gate --report", "Screenshots 1-4", "Done"],
-    ["FR7", "At least one CI/CD integration", ".github/workflows/evalrag.yml", "CLI exit codes (local)", "Configured"],
+    ["FR7", "At least one CI/CD integration", ".github/workflows/evalrag.yml", "GitHub Actions runs #2 (pass) and #3 (fail)", "Done"],
     ["FR8", "Fail the quality gate when criteria are not met", "compare.quality_gate", "TC09, TC10, TC11", "Done"],
 ], [0.5, 2.2, 1.7, 1.1, 0.8])
 table(["ID", "Non-functional requirement", "How it is met"], [
@@ -201,6 +201,10 @@ figure(DOCS / "screenshots/01_run_history.jpg", "Screenshot 1: Run history and m
 figure(DOCS / "screenshots/04_gate_pass.jpg", "Screenshot 2: Candidate run compared with baseline — quality gate PASS")
 figure(DOCS / "screenshots/02_gate_fail.jpg", "Screenshot 3: Bad change — quality gate FAIL with reasons")
 figure(DOCS / "screenshots/03_comparison.jpg", "Screenshot 4: Metric-by-metric comparison with thresholds")
+figure(DOCS / "screenshots/05_github_actions.jpg", "Screenshot 5: GitHub Actions (github.com/theanshsonkar/EvalRAG). Run #2 on main passes (green). Pull request #1, the deliberate bad change, fails the quality gate (red). Run #1 failed on a test import-path setup bug, fixed in run #2.")
+p("Quality gate output from the failing pull request run: FAIL. answer_relevance = 0.100 is below the minimum 0.30; "
+  "answer_correctness = 0.234 is below the minimum 0.60; answer_correctness dropped by 0.646 vs baseline (allowed 0.10); "
+  "answer_relevance dropped by 0.266 vs baseline (allowed 0.10).")
 doc.add_page_break()
 
 # ---------------------------------------------------------------- 3. testing
@@ -278,7 +282,7 @@ table(["Risk (Milestone 1)", "What happened", "Updated status / mitigation"], [
     ["Gate false failures", "Not seen; repeat runs identical (TC08)", "Low. WARN level added for smaller drops."],
     ["Credentials exposed", "Key only via env/secret; .gitignore set", "Low."],
     ["Scope creep", "MVP finished first, as planned", "Medium. Jenkins / React UI kept out of scope."],
-    ["NEW: CI not yet run on GitHub", "Workflow written and steps verified locally", "Medium. Push the repo and record a real Actions run before the final review."],
+    ["CI behaves differently on GitHub than locally", "First real run caught an import-path issue; fixed (python -m pytest)", "Low. Green and red runs now recorded on GitHub."],
 ], [1.7, 2.2, 2.4])
 
 h("3.6 User / stakeholder feedback", 2)
@@ -294,7 +298,7 @@ table(["Phase (Milestone 1 plan)", "Status"], [
     ["2. Proof of concept", "Done"],
     ["3. Backend and storage", "Done (SQLite, REST API)"],
     ["4. Comparison and dashboard", "Done"],
-    ["5. CI/CD and validation", "Workflow and gate done; first GitHub run pending"],
+    ["5. CI/CD and validation", "Done (green run on main, red run blocks bad PR)"],
     ["6. Final testing and documentation", "In progress (README, this report)"],
 ])
 h("4.2 Member contributions", 2)
@@ -306,7 +310,6 @@ table(["Member", "Contribution"], [
 ])
 h("4.3 Remaining for the final milestone", 2)
 bullets([
-    "Push to GitHub and demonstrate a red (blocked) and green pull request in GitHub Actions.",
     "Run the pipeline with the Claude LLM generator and compare its scores with the extractive version.",
     "Add a semantic answer-relevance metric (embeddings or RAGAS LLM-judge) and compare with the current lexical one.",
     "Grow the dataset (50+ questions, including unanswerable ones to test refusals).",
