@@ -91,6 +91,7 @@ r.bold, r.font.size = True, Pt(28)
 t.add_run("Automated RAG, LLM and Prompt Evaluation Platform with CI/CD\n\n").font.size = Pt(14)
 t.add_run("MILESTONE 2: Requirements & Design, Implementation, Testing and Progress\n\n").bold = True
 table(["Team member", "Student ID"], [["Harshita Singh", "E23CSEU2054"], ["Anshika Sidana", "E23CSEU2111"]])
+p("Presented by: Anshika Sidana (E23CSEU2111)")
 todo("Add guide/mentor name, date, and any third team member if applicable.")
 doc.add_page_break()
 
