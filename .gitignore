@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+.pytest_cache/
+evalrag.db
+eval_report.md
+.env

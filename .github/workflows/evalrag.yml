@@ -1,0 +1,42 @@
+name: EvalRAG quality gate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      config:
+        description: "Config file to evaluate"
+        default: "configs/baseline.json"
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    env:
+      # Only used by configs with "generator": "claude". Stored as a repo secret, never in code (NFR3).
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Unit tests
+        run: pytest -q
+      - name: Baseline run (from main branch config)
+        run: python -m evalrag.cli run --config configs/baseline.json --set-baseline
+      - name: Candidate run
+        run: python -m evalrag.cli run --config ${{ github.event.inputs.config || 'configs/candidate.json' }}
+      - name: Quality gate
+        run: python -m evalrag.cli gate --report eval_report.md
+      - name: Show report in job summary
+        if: always()
+        run: cat eval_report.md >> "$GITHUB_STEP_SUMMARY" || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evalrag-results
+          path: |
+            eval_report.md
+            evalrag.db

@@ -1,0 +1,10 @@
+{
+  "min_scores": {
+    "context_recall": 0.70,
+    "faithfulness": 0.80,
+    "answer_relevance": 0.30,
+    "answer_correctness": 0.60
+  },
+  "max_avg_latency_ms": 500,
+  "max_drop_vs_baseline": 0.10
+}

@@ -1,0 +1,13 @@
+tests/test_evalrag.py::test_tc01_valid_dataset_loads PASSED              [  8%]
+tests/test_evalrag.py::test_tc02_invalid_dataset_rejected PASSED         [ 16%]
+tests/test_evalrag.py::test_tc03_retriever_finds_correct_source PASSED   [ 25%]
+tests/test_evalrag.py::test_tc04_metrics_perfect_answer PASSED           [ 33%]
+tests/test_evalrag.py::test_tc05_faithfulness_detects_hallucination PASSED [ 41%]
+tests/test_evalrag.py::test_tc06_wrong_answer_scores_low PASSED          [ 50%]
+tests/test_evalrag.py::test_tc07_run_is_stored_and_retrievable PASSED    [ 58%]
+tests/test_evalrag.py::test_tc08_repeat_runs_are_identical PASSED        [ 66%]
+tests/test_evalrag.py::test_tc09_gate_passes_good_version PASSED         [ 75%]
+tests/test_evalrag.py::test_tc10_gate_fails_regressed_version PASSED     [ 83%]
+tests/test_evalrag.py::test_tc11_errors_are_recorded_not_crashing PASSED [ 91%]
+tests/test_evalrag.py::test_tc12_api_endpoints PASSED                    [100%]
+======================== 12 passed, 1 warning in 2.89s =========================

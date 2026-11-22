@@ -1,0 +1,10 @@
+{
+  "version": "v2-bad-change",
+  "description": "Controlled bad change: whole-document chunks, only 1 chunk retrieved, and the answer is just the first sentence (simulates a careless prompt/retrieval edit).",
+  "kb_dir": "data/kb",
+  "chunk_size": 5,
+  "top_k": 1,
+  "generator": "extractive",
+  "answer_style": "first_sentence",
+  "prompt_template": "Answer briefly.\n\nContext:\n{context}\n\nQuestion: {question}\nAnswer:"
+}

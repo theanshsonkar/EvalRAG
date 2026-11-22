@@ -1,0 +1,31 @@
+{
+  "name": "campus-helpdesk-v1",
+  "description": "Questions about a fictional university, answered from data/kb. Written by the team (synthetic, no licensing issues).",
+  "cases": [
+    {"id": "Q01", "question": "When do B.Tech applications open and close?", "reference": "Applications open on 1 March and close on 30 April every year.", "source": "admissions"},
+    {"id": "Q02", "question": "What minimum marks are needed in Class 12 for admission?", "reference": "At least 60 percent marks in Physics, Chemistry and Mathematics in Class 12.", "source": "admissions"},
+    {"id": "Q03", "question": "Is the application fee refundable?", "reference": "The application fee is 1500 rupees and it is non-refundable.", "source": "admissions"},
+    {"id": "Q04", "question": "When are admission results published?", "reference": "Admission results are published on the university portal by 31 May.", "source": "admissions"},
+    {"id": "Q05", "question": "What is the annual tuition fee for B.Tech?", "reference": "The annual tuition fee for the B.Tech programme is 2,40,000 rupees.", "source": "fees"},
+    {"id": "Q06", "question": "How much is the late fee after the due date?", "reference": "A late fee of 500 rupees per week is charged after the due date.", "source": "fees"},
+    {"id": "Q07", "question": "Who gets a merit scholarship?", "reference": "Merit scholarships cover 50 percent of tuition for students with a CGPA of 9.0 or above.", "source": "fees"},
+    {"id": "Q08", "question": "What CGPA is needed to renew a scholarship?", "reference": "Scholarship renewal requires the student to maintain a CGPA of 8.5 every year.", "source": "fees"},
+    {"id": "Q09", "question": "How much is the hostel fee and does it include meals?", "reference": "The hostel fee is 90,000 rupees per year and includes meals in the mess.", "source": "hostel"},
+    {"id": "Q10", "question": "What time do hostel gates close?", "reference": "Hostel gates close at 10 PM and students must sign the register for late entry.", "source": "hostel"},
+    {"id": "Q11", "question": "When are guests allowed to visit the hostel?", "reference": "Guests are allowed in the visitor lounge between 4 PM and 7 PM.", "source": "hostel"},
+    {"id": "Q12", "question": "What are the library opening hours?", "reference": "The central library is open from 8 AM to 11 PM on all working days.", "source": "library"},
+    {"id": "Q13", "question": "How many books can a student borrow and for how long?", "reference": "Students can borrow up to four books at a time for a period of fourteen days.", "source": "library"},
+    {"id": "Q14", "question": "What is the fine for an overdue library book?", "reference": "A fine of 5 rupees per day is charged for each overdue book.", "source": "library"},
+    {"id": "Q15", "question": "Which digital libraries can students access on campus?", "reference": "The library provides free access to IEEE Xplore and the ACM Digital Library on campus.", "source": "library"},
+    {"id": "Q16", "question": "What attendance is required to sit the end-term examination?", "reference": "Students need at least 75 percent attendance to sit the end-term examination.", "source": "exams"},
+    {"id": "Q17", "question": "How can a student request re-evaluation and what does it cost?", "reference": "Re-evaluation can be requested within seven days of result publication for a fee of 1000 rupees.", "source": "exams"},
+    {"id": "Q18", "question": "When are supplementary examinations held?", "reference": "Supplementary examinations for failed courses are held in July.", "source": "exams"},
+    {"id": "Q19", "question": "When does the placement season start?", "reference": "The placement season starts in August for final year students.", "source": "placements"},
+    {"id": "Q20", "question": "Can a student with an active backlog sit for placements?", "reference": "Students with an active backlog are not eligible to sit for placement drives.", "source": "placements"},
+    {"id": "Q21", "question": "Can a student apply to more companies after accepting an offer?", "reference": "A student who accepts one offer cannot apply to further companies, except dream companies paying above 20 lakh per annum.", "source": "placements"},
+    {"id": "Q22", "question": "How often must Wi-Fi passwords be changed?", "reference": "Wi-Fi passwords must be changed every ninety days.", "source": "it_services"},
+    {"id": "Q23", "question": "Where is the IT helpdesk and what are its hours?", "reference": "The IT helpdesk is located in Block C, room 104, and is open from 9 AM to 6 PM.", "source": "it_services"},
+    {"id": "Q24", "question": "How do I register a new student club?", "reference": "New clubs can be registered with the Dean of Student Welfare with at least fifteen founding members.", "source": "clubs"},
+    {"id": "Q25", "question": "When are the technical and cultural festivals held?", "reference": "The annual technical festival is held in February and the cultural festival is held in October.", "source": "clubs"}
+  ]
+}
